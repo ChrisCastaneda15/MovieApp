@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CastCell" customModule="Moviez" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-nI-low">
+                    <rect key="frame" x="8" y="0.0" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vY3-nI-low" secondAttribute="height" multiplier="1:1" id="nae-d5-jNW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="character name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-1q-6AF">
+                    <rect key="frame" x="3" y="88" width="74" height="31.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="3tG-gg-Oi4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                    <color key="textColor" name="Text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Actor Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-F0-c4L">
+                    <rect key="frame" x="3" y="69" width="74" height="16"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                    <color key="textColor" name="Text"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="Main"/>
+            <constraints>
+                <constraint firstItem="vY3-nI-low" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BBc-0f-Vya"/>
+                <constraint firstItem="AFh-F0-c4L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="FYe-XY-6gs"/>
+                <constraint firstItem="5wz-1q-6AF" firstAttribute="top" secondItem="AFh-F0-c4L" secondAttribute="bottom" constant="3" id="Gkz-kl-cXo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vY3-nI-low" secondAttribute="trailing" constant="8" id="HWq-9H-ZZo"/>
+                <constraint firstItem="vY3-nI-low" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="IgN-sZ-lYq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5wz-1q-6AF" secondAttribute="trailing" constant="3" id="Y3l-6V-GAC"/>
+                <constraint firstItem="vY3-nI-low" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="h8S-ah-1Tz"/>
+                <constraint firstItem="5wz-1q-6AF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="3" id="mGj-nm-AOc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AFh-F0-c4L" secondAttribute="trailing" constant="3" id="rVU-se-8bp"/>
+                <constraint firstItem="AFh-F0-c4L" firstAttribute="top" secondItem="vY3-nI-low" secondAttribute="bottom" constant="5" id="uHN-lp-qhJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="actorName" destination="AFh-F0-c4L" id="tYt-Al-ZNW"/>
+                <outlet property="castPhoto" destination="vY3-nI-low" id="vgP-Gw-3IW"/>
+                <outlet property="characterName" destination="5wz-1q-6AF" id="w5M-n6-2xj"/>
+            </connections>
+            <point key="canvasLocation" x="-104.34782608695653" y="-153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text">
+            <color red="0.11500000208616257" green="0.11400000005960464" blue="0.11599999666213989" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

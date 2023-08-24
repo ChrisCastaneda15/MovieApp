@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TrendingMediaCell" customModule="Moviez" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="204"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qwm-PK-mGS">
+                    <rect key="frame" x="0.0" y="0.0" width="347" height="204"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SONIC THE HEDGEHOG" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TU7-W1-8fu">
+                    <rect key="frame" x="30" y="108.5" width="260.5" height="65.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.40316901408450706" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <size key="shadowOffset" width="2" height="1"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02- 17 - 2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D5N-ib-YSJ">
+                    <rect key="frame" x="30" y="94" width="74" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.95162726683937826" green="0.95162726683937826" blue="0.95162726683937826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <size key="shadowOffset" width="1" height="1"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qwm-PK-mGS" secondAttribute="bottom" id="3Rk-de-mP3"/>
+                <constraint firstItem="TU7-W1-8fu" firstAttribute="top" secondItem="D5N-ib-YSJ" secondAttribute="bottom" id="Gyb-ah-Esy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TU7-W1-8fu" secondAttribute="bottom" constant="30" id="Qj6-Zh-pcA"/>
+                <constraint firstItem="qwm-PK-mGS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QmU-uV-ziI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qwm-PK-mGS" secondAttribute="trailing" id="RWV-lb-5J3"/>
+                <constraint firstItem="D5N-ib-YSJ" firstAttribute="leading" secondItem="TU7-W1-8fu" secondAttribute="leading" id="dc1-ax-3Sy"/>
+                <constraint firstItem="TU7-W1-8fu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="hxG-o7-ZSN"/>
+                <constraint firstItem="TU7-W1-8fu" firstAttribute="width" secondItem="qwm-PK-mGS" secondAttribute="width" multiplier="0.75" id="uqy-sO-yDd"/>
+                <constraint firstItem="qwm-PK-mGS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yWe-mK-YOX"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backdropImgView" destination="qwm-PK-mGS" id="0Rw-qR-d6E"/>
+                <outlet property="mediaTitleLabel" destination="TU7-W1-8fu" id="T3Q-6U-aTd"/>
+                <outlet property="releaseDateLabel" destination="D5N-ib-YSJ" id="HXf-wR-4IV"/>
+            </connections>
+            <point key="canvasLocation" x="80.434782608695656" y="-145.98214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

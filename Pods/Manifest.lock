@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.1.0)
+  - SDWebImage (5.7.3):
+    - SDWebImage/Core (= 5.7.3)
+  - SDWebImage/Core (5.7.3)
+  - SideMenuSwift (2.0.7)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SDWebImage
+  - SideMenuSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SDWebImage
+    - SideMenuSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
+  SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: fce708de05c6bcfc036ac5c95198bf507252629c
+
+COCOAPODS: 1.5.2
