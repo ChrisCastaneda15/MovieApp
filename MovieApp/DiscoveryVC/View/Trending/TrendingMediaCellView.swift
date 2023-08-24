@@ -20,6 +20,7 @@ struct TrendingMediaCell: View {
                 .resizable()
                 .placeholder {
                     Rectangle().foregroundColor(.gray)
+                        .frame(height: geo.size.width / 1.77)
                 }
                 .indicator(.activity)
                 .transition(.fade(duration: 0.3))

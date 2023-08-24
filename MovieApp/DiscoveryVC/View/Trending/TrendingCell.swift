@@ -25,11 +25,6 @@ class TrendingCell: UITableViewCell {
     
     @IBOutlet weak var trendingCollectionView: UICollectionView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        trendingCollectionView.register(UINib(nibName: "TrendingMediaCell", bundle: nil), forCellWithReuseIdentifier: TrendingMediaCell.REUSE_ID)
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -41,7 +36,7 @@ extension TrendingCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingMediaCell.REUSE_ID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendingMediaCellReuse", for: indexPath)
         
         let mediaViewModel = mediaViewModels[indexPath.row]
         cell.contentConfiguration = UIHostingConfiguration(content: {
@@ -60,5 +55,14 @@ extension TrendingCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var media = self.mediaViewModels[indexPath.row]
+        if media.type == .movie {
+            self.navigationProtocol?.goToMovieDetail(for: media.convertToMovieViewModel())
+        } else {
+            self.navigationProtocol?.goToTVDetail(for: media.convertToTVViewModel())
+        }
     }
 }
