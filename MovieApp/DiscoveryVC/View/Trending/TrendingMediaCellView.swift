@@ -1,5 +1,5 @@
 //
-//  TrendingMediaCell_SwiftUI.swift
+//  TrendingMediaCellView.swift
 //  MovieApp
 //
 //  Created by Chris Castaneda on 8/24/23.
@@ -9,7 +9,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct TrendingMediaCell_SwiftUI: View {
+struct TrendingMediaCell: View {
     var subtitleText: String
     var titleText: String
     var backgroundImageUrl: URL?
@@ -48,6 +48,6 @@ struct TrendingMediaCell_SwiftUI: View {
 struct TrendingMediaCell_SwiftUI_Previews: PreviewProvider {
     static var previews: some View {
         let posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
-        TrendingMediaCell_SwiftUI(subtitleText: "Jul 19 2023", titleText: "BARBIE", backgroundImageUrl: posterURL)
+        TrendingMediaCell(subtitleText: "Jul 19 2023", titleText: "BARBIE", backgroundImageUrl: posterURL)
     }
 }

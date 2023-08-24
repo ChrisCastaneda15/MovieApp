@@ -45,7 +45,7 @@ extension TrendingCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         let mediaViewModel = mediaViewModels[indexPath.row]
         cell.contentConfiguration = UIHostingConfiguration(content: {
-            TrendingMediaCell_SwiftUI(
+            TrendingMediaCell(
                 subtitleText: mediaViewModel.releaseDate,
                 titleText: mediaViewModel.title,
                 backgroundImageUrl: mediaViewModel.getBackdropImgUrl()
