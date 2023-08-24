@@ -10,6 +10,7 @@ target 'MovieApp' do
   
   # Images
   pod 'SDWebImage'
+  pod 'SDWebImageSwiftUI'
   
   # UI Elements
   pod 'SideMenuSwift'

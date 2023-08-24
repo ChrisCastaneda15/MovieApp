@@ -7,18 +7,42 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct TrendingMediaCell_SwiftUI: View {
+    private var subtitleText = "Jul 19 2023"
+    private var titleText = "BARBIE"
+    private var posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
+    
     var body: some View {
-        let poster =
-        URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
-        ZStack {
-            AsyncImage(url: poster) {_ in
-                Text("Loading...")
-            }
-            //Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            WebImage(url: posterURL)
+                .resizable()
+                .placeholder {
+                    Rectangle().foregroundColor(.gray)
+                }
+                .indicator(.activity)
+                .transition(.fade(duration: 0.3))
+                .scaledToFit()
+                .frame(height: geo.size.width / 1.77)
+                .cornerRadius(25.0)
+                .overlay(alignment: .bottomLeading) {
+                    VStack(alignment: .leading) {
+                        Text(subtitleText)
+                            .font(.system(size: 11))
+                            .foregroundColor(.white)
+                            .shadow(color: .black.opacity(0.4), radius: 1.0, x: 2, y: 1)
+                        Text(titleText)
+                            .font(.system(size: 27))
+                            .bold()
+                            .foregroundColor(.white)
+                            .shadow(color: .black.opacity(0.4), radius: 1.0, x: 2, y: 1)
+                    }
+                    .padding([.leading, .bottom], 30)
+                }
         }
     }
+    
 }
 
 struct TrendingMediaCell_SwiftUI_Previews: PreviewProvider {

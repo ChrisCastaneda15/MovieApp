@@ -39,7 +39,6 @@ class TrendingMediaCell: UICollectionViewCell {
         if traitCollection.forceTouchCapability != .available {
             UIView.animate(withDuration: 0.2) {
                 self.backdropImgView.transform = CGAffineTransform.identity
-                
                 self.mediaTitleLabel.transform = CGAffineTransform.identity
                 self.releaseDateLabel.transform = CGAffineTransform.identity
             }
