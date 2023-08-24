@@ -1,5 +1,5 @@
 //
-//  TrendingMediaCell_SwiftUI.swift
+//  TrendingMediaCellView.swift
 //  MovieApp
 //
 //  Created by Chris Castaneda on 8/24/23.
@@ -9,17 +9,18 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct TrendingMediaCell_SwiftUI: View {
-    private var subtitleText = "Jul 19 2023"
-    private var titleText = "BARBIE"
-    private var posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
+struct TrendingMediaCell: View {
+    var subtitleText: String
+    var titleText: String
+    var backgroundImageUrl: URL?
     
     var body: some View {
         GeometryReader { geo in
-            WebImage(url: posterURL)
+            WebImage(url: backgroundImageUrl)
                 .resizable()
                 .placeholder {
                     Rectangle().foregroundColor(.gray)
+                        .frame(height: geo.size.width / 1.77)
                 }
                 .indicator(.activity)
                 .transition(.fade(duration: 0.3))
@@ -32,7 +33,7 @@ struct TrendingMediaCell_SwiftUI: View {
                             .font(.system(size: 11))
                             .foregroundColor(.white)
                             .shadow(color: .black.opacity(0.4), radius: 1.0, x: 2, y: 1)
-                        Text(titleText)
+                        Text(titleText.uppercased())
                             .font(.system(size: 27))
                             .bold()
                             .foregroundColor(.white)
@@ -47,6 +48,7 @@ struct TrendingMediaCell_SwiftUI: View {
 
 struct TrendingMediaCell_SwiftUI_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingMediaCell_SwiftUI()
+        let posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
+        TrendingMediaCell(subtitleText: "Jul 19 2023", titleText: "BARBIE", backgroundImageUrl: posterURL)
     }
 }

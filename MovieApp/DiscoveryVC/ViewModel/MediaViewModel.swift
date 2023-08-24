@@ -57,4 +57,8 @@ struct MediaViewModel {
         let tvvm = TVViewModel(item: media)
         return tvvm
     }
+    
+    func getBackdropImgUrl() -> URL? {
+        return URL(string: APIManager.IMAGES.getPosterImage(path: self.backdropImage, with: 3))
+    }
 }
