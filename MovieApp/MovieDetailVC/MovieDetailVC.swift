@@ -16,6 +16,7 @@ class MovieDetailVC: UIViewController {
     
     
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var bgViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
@@ -84,14 +85,7 @@ class MovieDetailVC: UIViewController {
         self.descBottomConstraint.constant = self.descBottomConstraint.constant - (self.CONST_CAST_SIZE + self.CONST_DIR_SIZE)
         
         bgView.layer.cornerRadius = 10
-        bgView.layer.shadowColor = UIColor(named: "Main")?.cgColor
-        bgView.layer.shadowOffset = CGSize(width: 0.0, height : -25.0)
-        bgView.layer.shadowOpacity = 0.8
-        bgView.layer.shadowRadius = 20
-        
-        posterImageView.clipsToBounds = true
-        posterImageView.layer.cornerRadius = 10.0
-        posterImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        bgViewTopConstraint.constant = bgView.layer.cornerRadius * -1
         
         posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: .large)), completed: nil)
         
