@@ -93,7 +93,7 @@ class MovieDetailVC: UIViewController {
         posterImageView.layer.cornerRadius = 10.0
         posterImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
-        posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: 3)), completed: nil)
+        posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: .large)), completed: nil)
         
         movieNameLabel.text = movieViewModel.title
         movieGenreLabel.text = MovieViewModel.genreString(from: movieViewModel.genreIds)

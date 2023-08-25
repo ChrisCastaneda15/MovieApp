@@ -32,53 +32,49 @@ class APIManager: NSObject {
     public struct IMAGES {
         private static let IMAGE_BASE_PATH = "https://image.tmdb.org/t/p/"
         
-        static func getBackdropImage(path: String, with size: Int) -> String{
-            var imgsize = ""
-            switch size {
-            case 1: // SMALL : 300
-                imgsize = "w300"
-            case 2: // MED : 780
-                imgsize = "w780"
-            case 3: // LARGE : 1280
-                imgsize = "w1280"
-            default: // ORIGINAL
-                imgsize = "original"
+        enum ImageSize {
+            case small, medium, large, original
+            
+            var poster: String {
+                switch self {
+                    case .small: return "w342"
+                    case .medium: return "w500"
+                    case .large: return "w780"
+                    case .original: return "original"
+                }
             }
-            return IMAGES.IMAGE_BASE_PATH + imgsize + path
+            
+            var backdrop: String {
+                switch self {
+                    case .small: return "w300"
+                    case .medium: return "w780"
+                    case .large: return "w1280"
+                    case .original: return "original"
+                }
+            }
+            
+            var castPhoto: String {
+                switch self {
+                    case .small: return "w342"
+                    case .medium: return "w500"
+                    case .large: return "w780"
+                    case .original: return "original"
+                }
+            }
         }
-        
-    
         
         //MARK: - Funcs
         
-        public static func getPosterImage(path: String, with size: Int) -> String{
-            var imgsize = ""
-            switch size {
-            case 1: // SMALL : 342
-                imgsize = "w342"
-            case 2: // MED : 500
-                imgsize = "w500"
-            case 3: // LARGE : 780
-                imgsize = "w780"
-            default: // ORIGINAL
-                imgsize = "original"
-            }
-            return IMAGES.IMAGE_BASE_PATH + imgsize + path
+        public static func getPosterImage(path: String, with size: ImageSize) -> String {
+            return IMAGES.IMAGE_BASE_PATH + size.poster + path
         }
         
-        public static func getCastPhoto(path: String, with size: Int) -> String{
-            var imgsize = ""
-            switch size {
-            case 1: // SMALL : 342
-                imgsize = "w342"
-            case 2: // MED : 500
-                imgsize = "w500"
-            case 3: // LARGE : 780
-                imgsize = "w780"
-            default: // ORIGINAL
-                imgsize = "original"
-            }
-            return IMAGES.IMAGE_BASE_PATH + imgsize + path
+        public static func getBackdropImage(path: String, with size: ImageSize) -> String {
+            return IMAGES.IMAGE_BASE_PATH + size.backdrop + path
+        }
+        
+        public static func getCastPhoto(path: String, with size: ImageSize) -> String {
+            return IMAGES.IMAGE_BASE_PATH + size.castPhoto + path
         }
     }
     

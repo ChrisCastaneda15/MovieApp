@@ -21,7 +21,7 @@ class MovieCollectionCell: UICollectionViewCell {
             movieGenresLabel.text = MovieViewModel.genreString(from: movieViewModel.genreIds)
             movieGenresLabel.sizeToFit()
             posterImageView.layer.cornerRadius = 25.0
-            posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: 2)), completed: nil)
+            posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: .medium)), completed: nil)
         }
     }
     

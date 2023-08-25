@@ -52,8 +52,8 @@ class TVDetailVC: UIViewController {
           
         posterImageView.layer.cornerRadius = 10.0
 
-        posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: tvViewModel.posterImage, with: 1)), completed: nil)
-        bgImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getBackdropImage(path: tvViewModel.backdropImage, with: 3)), completed: nil)
+        posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: tvViewModel.posterImage, with: .small)), completed: nil)
+        bgImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getBackdropImage(path: tvViewModel.backdropImage, with: .large)), completed: nil)
         showNameLabel.text = tvViewModel.title
         
         //movieGenreLabel.text = MovieViewModel.genreString(from: movieViewModel.genreIds)

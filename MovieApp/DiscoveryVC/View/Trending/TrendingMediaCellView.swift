@@ -48,7 +48,7 @@ struct TrendingMediaCell: View {
 
 struct TrendingMediaCell_SwiftUI_Previews: PreviewProvider {
     static var previews: some View {
-        let posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: 3))
+        let posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: .large))
         TrendingMediaCell(subtitleText: "Jul 19 2023", titleText: "BARBIE", backgroundImageUrl: posterURL)
     }
 }

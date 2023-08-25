@@ -30,7 +30,7 @@ class CastCell: UICollectionViewCell {
         if let actor = actorModel {
             characterName.text = actor.characterName
             actorName.text = actor.actorName
-            let imgUrl = URL(string: APIManager.IMAGES.getCastPhoto(path: actor.imgPath, with: 1))
+            let imgUrl = URL(string: APIManager.IMAGES.getCastPhoto(path: actor.imgPath, with: .small))
             castPhoto.sd_setImage(with: imgUrl, placeholderImage: #imageLiteral(resourceName: "cast_placeholder"), options: SDWebImageOptions(), completed: nil)
             castPhoto.tintColor = UIColor.mainTextColor            
         }
