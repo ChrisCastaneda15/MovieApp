@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MoviesViewCell: UITableViewCell {
     public static let REUSE_ID = "moviesCellReuse"
@@ -33,7 +34,6 @@ class MoviesViewCell: UITableViewCell {
         
         // Initialization code
         genreCollectionView.register(UINib(nibName: "GenreCollectionCell", bundle: nil), forCellWithReuseIdentifier: GenreCollectionCell.REUSE_ID)
-        movieCollectionView.register(UINib(nibName: "MovieCollectionCell", bundle: nil), forCellWithReuseIdentifier: MovieCollectionCell.REUSE_ID)
     }
 
     fileprivate func fetchMovies(with Genre: Int?){
@@ -81,22 +81,27 @@ extension MoviesViewCell: UICollectionViewDelegate, UICollectionViewDataSource, 
             if selectedGenre ==  indexPath.row { cell.isSelected = true }
             return cell
         } else if collectionView.tag == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionCell.REUSE_ID, for: indexPath) as! MovieCollectionCell
-            cell.movieViewModel = movieViewModels[indexPath.row]
-            //registerForPreviewing(with: self, sourceView: cell)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionCellReuse", for: indexPath)
+            let movieViewModel = movieViewModels[indexPath.row]
+            cell.contentConfiguration = UIHostingConfiguration(content: {
+                MovieCollectionCellView(
+                    titleText: movieViewModel.title,
+                    subtitleText: movieViewModel.genreString(),
+                    posterImageUrl: movieViewModel.getPosterImgUrl()
+                )
+            })
             return cell
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView.tag == 0 { return 10 }
-        return 20
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
-            return CGSize(width: self.frame.width * 0.351, height: self.frame.height * 0.85)
+            return CGSize(width: self.frame.width * 0.4, height: self.frame.height * 0.85)
         }
         return CGSize(width: 500, height: 33.0)
     }
@@ -117,62 +122,5 @@ extension MoviesViewCell: UICollectionViewDelegate, UICollectionViewDataSource, 
             navigationProtocol?.goToMovieDetail(for: movieViewModels[indexPath.row])
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        if collectionView.tag == 1 {
-            // 1
-            let index = indexPath.row
-            
-            // 2
-            let identifier = "\(index)" as NSString
 
-            let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
-                print("Sharing \(self.movieViewModels[index].title))")
-            }
-            
-            
-            return UIContextMenuConfiguration(
-              identifier: identifier,
-              previewProvider: nil) { _ in
-                return UIMenu(title: "\(self.movieViewModels[index].title)", image: nil, children: [share])
-            }
-            
-        }
-        return nil
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, previewForHighlightingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
-        if collectionView.tag == 1 {
-            guard
-              // 1
-              let identifier = configuration.identifier as? String,
-              let index = Int(identifier),
-              // 2
-            
-              let cell = collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? MovieCollectionCell
-              else {
-                return nil
-            }
-            
-            // 3
-            return UITargetedPreview(view: cell.posterImageView)
-        }
-        return nil
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
-        if collectionView.tag == 1 {
-            guard
-              let identifier = configuration.identifier as? String,
-              let index = Int(identifier)
-              else {
-                return
-            }
-            
-            // 3
-            animator.addCompletion {
-                self.navigationProtocol?.goToMovieDetail(for: self.movieViewModels[index])
-            }
-        }
-    }
 }

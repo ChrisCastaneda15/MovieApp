@@ -59,6 +59,6 @@ struct MediaViewModel {
     }
     
     func getBackdropImgUrl() -> URL? {
-        return URL(string: APIManager.IMAGES.getPosterImage(path: self.backdropImage, with: .large))
+        return URL(string: APIManager.IMAGES.getBackdropImage(path: self.backdropImage, with: .large))
     }
 }

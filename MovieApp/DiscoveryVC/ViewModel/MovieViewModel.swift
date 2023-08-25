@@ -54,13 +54,17 @@ struct MovieViewModel {
         } else { print("There was an error decoding the string") }
     }
     
-    static func genreString(from ids: [Int]) -> String{
+    func genreString() -> String{
         var genreArry = [String]()
         
-        for id in ids {
+        for id in self.genreIds {
             genreArry.append(MovieGenre.dictionary[id] ?? "")
         }
         
         return genreArry.joined(separator: ", ")
+    }
+    
+    func getPosterImgUrl(size: APIManager.IMAGES.ImageSize? = nil) -> URL? {
+        return URL(string: APIManager.IMAGES.getPosterImage(path: self.posterImage, with: size ?? .medium))
     }
 }

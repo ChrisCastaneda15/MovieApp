@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="45" sectionFooterHeight="25" translatesAutoresizingMaskIntoConstraints="NO" id="VPz-cM-vNY">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" name="Main"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="trendingCellReuse" rowHeight="150" id="owc-NJ-hnJ" customClass="TrendingCell" customModule="Moviez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="320" height="150"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="owc-NJ-hnJ" id="ccm-2q-xPe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moviesCellReuse" rowHeight="230" id="lhq-UN-Sx6" customClass="MoviesViewCell" customModule="Moviez" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174.5" width="320" height="230"/>
+                                        <rect key="frame" x="0.0" y="200" width="320" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lhq-UN-Sx6" id="xF5-Gn-P4j">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
@@ -82,11 +82,11 @@
                                                                 <size key="estimatedItemSize" width="100" height="30"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                <inset key="sectionInset" minX="15" minY="0.0" maxX="20" maxY="0.0"/>
+                                                                <inset key="sectionInset" minX="20" minY="0.0" maxX="15" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GenreCollectionCellReuse" id="hkP-uQ-060" customClass="GenreCollectionCell" customModule="Moviez" customModuleProvider="target">
-                                                                    <rect key="frame" x="15" y="1.5" width="67" height="30"/>
+                                                                    <rect key="frame" x="20" y="1.5" width="67" height="30"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eyv-w0-lxG">
                                                                         <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
@@ -183,7 +183,7 @@
                 <navigationController storyboardIdentifier="DiscoveryVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wcQ-KI-OiA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l01-Pu-xsU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="Main"/>
                         <textAttributes key="titleTextAttributes">

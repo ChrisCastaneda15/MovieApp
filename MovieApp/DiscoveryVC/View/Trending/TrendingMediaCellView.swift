@@ -26,7 +26,7 @@ struct TrendingMediaCell: View {
                 .transition(.fade(duration: 0.3))
                 .scaledToFit()
                 .frame(height: geo.size.width / 1.77)
-                .cornerRadius(25.0)
+                .cornerRadius(20)
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading) {
                         Text(subtitleText)
@@ -49,7 +49,7 @@ struct TrendingMediaCell: View {
 
 struct TrendingMediaCell_SwiftUI_Previews: PreviewProvider {
     static var previews: some View {
-        let posterURL = URL(string: APIManager.IMAGES.getPosterImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: .large))
+        let posterURL = URL(string: APIManager.IMAGES.getBackdropImage(path: "/nHf61UzkfFno5X1ofIhugCPus2R.jpg", with: .large))
         TrendingMediaCell(subtitleText: "Jul 19 2023", titleText: "BARBIE", backgroundImageUrl: posterURL)
     }
 }

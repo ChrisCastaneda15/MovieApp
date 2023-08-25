@@ -90,7 +90,7 @@ class MovieDetailVC: UIViewController {
         posterImageView.sd_setImage(with: URL(string: APIManager.IMAGES.getPosterImage(path: movieViewModel.posterImage, with: .large)), completed: nil)
         
         movieNameLabel.text = movieViewModel.title
-        movieGenreLabel.text = MovieViewModel.genreString(from: movieViewModel.genreIds)
+        movieGenreLabel.text = movieViewModel.genreString()
         descriptionTextView.text = movieViewModel.summary
         setRating(movieViewModel.rating)
     }
