@@ -28,15 +28,16 @@ struct MovieCollectionCellView: View {
                     .frame(height: geo.size.height * 0.73)
                     .cornerRadius(20.0)
                 VStack (alignment: .leading) {
+                    let textColor = Color("Text")
                     Text(titleText)
                         .font(.system(size: 17))
                         .bold()
-                        .foregroundColor(.black)
+                        .foregroundColor(textColor)
                         .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(subtitleText)
-                        .font(.system(size: 12))
-                        .foregroundColor(.black)
+                        .font(.system(size: 12, weight: .thin))
+                        .foregroundColor(textColor)
                 }
             }
         }
