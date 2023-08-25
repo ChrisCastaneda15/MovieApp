@@ -40,6 +40,7 @@ struct TrendingMediaCell: View {
                             .shadow(color: .black.opacity(0.4), radius: 1.0, x: 2, y: 1)
                     }
                     .padding([.leading, .bottom], 30)
+                    .padding(.trailing, 15)
                 }
         }
     }
