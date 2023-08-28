@@ -101,7 +101,7 @@ extension MoviesViewCell: UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
-            return CGSize(width: self.frame.width * 0.4, height: self.frame.height * 0.85)
+            return CGSize(width: self.frame.width * 0.35, height: self.frame.height * 0.75)
         }
         return CGSize(width: 500, height: 33.0)
     }
