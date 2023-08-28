@@ -51,4 +51,10 @@ public struct MovieGenre {
         10752 : "War",
         37 : "Western"
     ]
+    
+    static let strings = {
+        return order.map { genre in
+            dictionary[genre] ?? ""
+        }
+    }
 }

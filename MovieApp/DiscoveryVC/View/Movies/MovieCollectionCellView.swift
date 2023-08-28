@@ -24,8 +24,9 @@ struct MovieCollectionCellView: View {
                     }
                     .indicator(.activity)
                     .transition(.fade(duration: 0.3))
-                    .scaledToFill()
-                    .frame(height: geo.size.height * 0.73)
+                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geo.size.width)
                     .cornerRadius(20.0)
                 VStack (alignment: .leading) {
                     let textColor = Color("Text")
@@ -39,7 +40,9 @@ struct MovieCollectionCellView: View {
                         .font(.system(size: 12, weight: .thin))
                         .foregroundColor(textColor)
                 }
+                Spacer()
             }
+            .frame(width: geo.size.width, height: geo.size.height)
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class DiscoveryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -90,8 +91,8 @@ extension DiscoveryViewController: UITableViewDelegate, UITableViewDataSource {
             let height = width / 1.77
             return height
         } else if indexPath.section == 1 {
-            //let width = self.view.frame.width
-            let height = CGFloat(350.0)//width * 0.9
+            let width = self.view.frame.width
+            let height = width * 0.8
             return height
         }
         return 50.0
@@ -105,9 +106,11 @@ extension DiscoveryViewController: UITableViewDelegate, UITableViewDataSource {
             cell.navigationProtocol = self
             return cell
         } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MoviesViewCell.REUSE_ID, for: indexPath) as! MoviesViewCell
-            cell.movieViewModels = movieViewModels
-            cell.navigationProtocol = self
+            let cell = tableView.dequeueReusableCell(withIdentifier: "moviesCellReuse", for: indexPath)
+            cell.contentConfiguration = UIHostingConfiguration(content: {
+                MovieDiscoveryView(movieViewModels: movieViewModels)
+                    .frame(width: self.view.frame.width)
+            })
             return cell
         }
         return UITableViewCell()
